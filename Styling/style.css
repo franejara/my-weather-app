@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #ff3366;
+  font-size: 60px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: 400;
+}
+
+h2 {
+  color: #ff7043;
+  font-size: 45px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: 400;
+}
+
+h3 {
+  color: #ff7043;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.container {
+  margin-top: 90px;
+  max-width: 700px;
+}
+
+#search-form {
+  display: block;
+  margin: 0 auto;
+  border-radius: 100px;
+  padding: 3.5px 130px;
+  margin-bottom: 50px;
+  border-width: 2px;
+  border-color: #ff7043;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.row {
+  max-width: 100%;
+  justify-content: center;
+}
+
+#current-emoji {
+  font-size: 140px;
+  position: relative;
+  left: 35px;
+}
+
+.col-6 {
+  text-align: center;
+  max-width: 255px;
+  display: inline-block;
+  align-items: auto;
+
+  justify-content: center;
+}
+
+.weather-elements {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 110px;
+  color: #fa3366;
+  font-size: 17px;
+}
+
+.next-days {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 25px;
+}
+
+.card-group {
+  max-width: 100%;
+  justify-content: center;
+}
+
+.card {
+  padding: 14px;
+  max-width: 102px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-color: transparent;
+}
+
+.weather-emoji {
+  font-size: 27px;
+  text-align: center;
+  line-height: 16px;
+}
+
+.card-title {
+  text-align: center;
+  font-weight: 300;
+  color: #fa7043;
+  font-size: 16px;
+  line-height: 14px;
+}
+
+.card-text {
+  text-align: center;
+  color: #fa3366;
+  font-size: 19px;
+}
