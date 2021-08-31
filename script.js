@@ -5,6 +5,12 @@ function currentTemperature(response) {
   let temperatureHeading = document.querySelector("#current-temperature");
   temperatureHeading.innerHTML = `${temperature}°C`;
 
+  let currentHumidity = document.querySelector("#humidity");
+  currentHumidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
+
+  let currentWind = document.querySelector("#wind");
+  currentWind.innerHTML = `${Math.round(response.data.wind.speed)} km/H`;
+
   let cityHeading = document.querySelector("#current-city");
   cityHeading.innerHTML = `in ${response.data.name}`;
 }
