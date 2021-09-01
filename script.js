@@ -1,20 +1,5 @@
 // making the data real
 
-function currentTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let temperatureHeading = document.querySelector("#current-temperature");
-  temperatureHeading.innerHTML = `${temperature}°C`;
-
-  let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
-
-  let currentWind = document.querySelector("#wind");
-  currentWind.innerHTML = `${Math.round(response.data.wind.speed)} km/H`;
-
-  let cityHeading = document.querySelector("#current-city");
-  cityHeading.innerHTML = `in ${response.data.name}`;
-}
-
 function citySearched(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-form");
@@ -28,8 +13,29 @@ function citySearched(event) {
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", citySearched);
 
-function currentDayAndTime() {
-  let now = new Date();
+function currentTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let temperatureHeading = document.querySelector("#current-temperature");
+  temperatureHeading.innerHTML = `${temperature}°C`;
+
+  let currentSky = document.querySelector("#sky-description");
+  currentSky.innerHTML = `${response.data.weather[0].description} `;
+
+  let currentHumidity = document.querySelector("#humidity");
+  currentHumidity.innerHTML = ` ${Math.round(response.data.main.humidity)}% `;
+
+  let currentWind = document.querySelector("#wind");
+  currentWind.innerHTML = ` ${Math.round(response.data.wind.speed)} km/H`;
+
+  let cityHeading = document.querySelector("#current-city");
+  cityHeading.innerHTML = `in ${response.data.name}`;
+
+  let currentDateTime = document.querySelector("#current-day-time");
+  currentDateTime.innerHTML = currentDayAndTime(response.data.dt * 1000);
+}
+
+function currentDayAndTime(timestamp) {
+  let now = new Date(timestamp);
 
   let hours = now.getHours();
   if (hours < 10) {
@@ -44,8 +50,7 @@ function currentDayAndTime() {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[now.getDay()];
 
-  let currentDateTime = document.querySelector("#current-day-time");
-  currentDateTime.innerHTML = `currently at ${hours}:${minutes}, ${day}`;
+  return `last updated at ${hours}:${minutes}, ${day}`;
 }
 
 currentDayAndTime();
