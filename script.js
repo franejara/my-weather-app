@@ -30,6 +30,35 @@ function currentTemperature(response) {
   let cityHeading = document.querySelector("#current-city");
   cityHeading.innerHTML = `in ${response.data.name}`;
 
+  let mainEmoji = document.querySelector("#current-emoji");
+
+  // lo hago OBJETO
+
+  let skyCondition = {
+    "01d": "☀️",
+    "01n": "☀️",
+    "02d": "🌤",
+    "02n": "🌤",
+    "03d": "🌥",
+    "03n": "🌥",
+    "04d": "☁️",
+    "04n": "☁️",
+    "09d": "🌧",
+    "09n": "🌧",
+    "10d": "🌦",
+    "10n": "🌦",
+    "11d": "⛈",
+    "11n": "⛈",
+    "13d": "❄️",
+    "13n": "❄️",
+    "50d": "🌫",
+    "50n": "🌫",
+  };
+
+  mainEmoji.innerHTML = skyCondition[response.data.weather[0].icon];
+
+  //
+
   let currentDateTime = document.querySelector("#current-day-time");
   currentDateTime.innerHTML = currentDayAndTime(response.data.dt * 1000);
 }
