@@ -21,9 +21,13 @@ h2 {
 
 h3 {
   color: #ff7043;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
   font-weight: 400;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -31,27 +35,10 @@ h3 {
   max-width: 700px;
 }
 
-#search-form {
-  display: block;
-  margin: 0 auto;
-  border-radius: 100px;
-  padding: 3.5px 130px;
-  margin-bottom: 50px;
-  border-width: 2px;
-  border-color: #ff7043;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-
 .row {
   max-width: 100%;
   justify-content: center;
-}
-
-#current-emoji {
-  font-size: 140px;
-  position: relative;
-  left: 35px;
+  margin-top: 45px;
 }
 
 .col-6 {
@@ -74,7 +61,7 @@ h3 {
 .next-days {
   text-align: center;
   margin-bottom: 45px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .card-group {
@@ -111,10 +98,46 @@ h3 {
   font-size: 19px;
 }
 
+#change-units {
+  text-align: center;
+}
+
+#to-fahrenheit,
+#to-celsius {
+  color: #ab4b2e;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#to-fahrenheit.hidden,
+#to-celsius.hidden {
+  display: none;
+}
+
+#search-form {
+  display: block;
+  margin: 0 auto;
+  border-radius: 100px;
+  padding: 3.5px 80px;
+  margin-bottom: 5px;
+  border-width: 2px;
+  border-color: #ff7043;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+#current-emoji {
+  font-size: 140px;
+  position: relative;
+  left: 35px;
+}
+
 #footnote {
   text-align: center;
   font-size: 14px;
   color: #fa3366;
   margin-top: 40px;
   margin-bottom: 30px;
+  text-decoration: none;
 }
