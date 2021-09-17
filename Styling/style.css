@@ -98,23 +98,6 @@ a {
   font-size: 19px;
 }
 
-#change-units {
-  text-align: center;
-}
-
-#to-fahrenheit,
-#to-celsius {
-  color: #ab4b2e;
-  font-size: 12px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#to-fahrenheit.hidden,
-#to-celsius.hidden {
-  display: none;
-}
-
 #search-form {
   display: block;
   margin: 0 auto;
