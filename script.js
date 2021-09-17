@@ -69,11 +69,23 @@ function getForecast(coordinates) {
 
   console.log(apiUrl);
 
-  axios.get(apiUrl).then(showForecast); /// esta funcion showForecast es la siguiente
+  axios.get(apiUrl).then(displayForecast); /// esta funcion showForecast es la siguiente
 }
 
-function showForecast(response) {
+function displayForecast(response) {
   //// aqui definir dia de la semana, min, max y emoji, y como meto esto al html
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `
+
+<div class="card">
+          <h1 class="weather-emoji">⛅️</h1>
+          <div class="card-body">
+            <h5 class="card-title">Thursday</h5>
+            <p class="card-text">63°/67°</p>
+          </div>
+        </div>
+
+`;
 }
 
 function currentDayAndTime(timestamp) {
