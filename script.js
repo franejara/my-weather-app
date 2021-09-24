@@ -30,29 +30,6 @@ function currentWeather(response) {
 
   let mainEmoji = document.querySelector("#current-emoji");
 
-  // lo hago OBJETO
-
-  let skyCondition = {
-    "01d": "☀️",
-    "01n": "☀️",
-    "02d": "🌤",
-    "02n": "🌤",
-    "03d": "🌥",
-    "03n": "🌥",
-    "04d": "☁️",
-    "04n": "☁️",
-    "09d": "🌧",
-    "09n": "🌧",
-    "10d": "🌦",
-    "10n": "🌦",
-    "11d": "⛈",
-    "11n": "⛈",
-    "13d": "❄️",
-    "13n": "❄️",
-    "50d": "🌫",
-    "50n": "🌫",
-  };
-
   mainEmoji.innerHTML = skyCondition[response.data.weather[0].icon];
 
   let currentDateTime = document.querySelector("#current-day-time");
@@ -60,8 +37,6 @@ function currentWeather(response) {
 
   getForecast(response.data.coord);
 }
-
-///aqui tengo que crear dos funciones> una para recibir la data from the API call, y otra para desplegar el forecast en mi HTML
 
 function getForecast(coordinates) {
   let apiKey = "e2cf4b573a64292860e147bb5f7b421d";
@@ -73,7 +48,6 @@ function getForecast(coordinates) {
 }
 
 function displayForecast(response) {
-  //// aqui definir dia de la semana, min, max y emoji, y como meto esto al html
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -84,7 +58,9 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="card">
-        <h1 class="weather-emoji">⛅️</h1>
+        <h1 class="weather-emoji">${
+          skyCondition[forecastDay.weather[0].icon]
+        }</h1>
         <div class="card-body">
           <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
           <p class="card-text">${Math.round(
@@ -126,6 +102,27 @@ function currentDayAndTime(timestamp) {
 }
 
 currentDayAndTime();
+
+let skyCondition = {
+  "01d": "☀️",
+  "01n": "☀️",
+  "02d": "🌤",
+  "02n": "🌤",
+  "03d": "🌥",
+  "03n": "🌥",
+  "04d": "☁️",
+  "04n": "☁️",
+  "09d": "🌧",
+  "09n": "🌧",
+  "10d": "🌦",
+  "10n": "🌦",
+  "11d": "⛈",
+  "11n": "⛈",
+  "13d": "❄️",
+  "13n": "❄️",
+  "50d": "🌫",
+  "50n": "🌫",
+};
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", citySearched);
